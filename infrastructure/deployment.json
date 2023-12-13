@@ -370,7 +370,7 @@
             "apiVersion": "2020-06-01",
             "name": "[parameters('HostingPlanName')]",
             "type": "Microsoft.Web/serverfarms",
-            "location": "[resourceGroup().location]",
+            "location": "eastus",
             "sku": {
                 "name": "[parameters('HostingPlanSku')]"
             },
@@ -384,7 +384,7 @@
             "apiVersion": "2020-06-01",
             "name": "[parameters('WebsiteName')]",
             "type": "Microsoft.Web/sites",
-            "location": "[resourceGroup().location]",
+            "location": "eastus",
             "dependsOn": [
                 "[resourceId('Microsoft.Web/serverfarms', parameters('HostingPlanName'))]"
             ],
@@ -588,7 +588,7 @@
             "type": "Microsoft.Insights/components",
             "apiVersion": "2020-02-02",
             "name": "[parameters('ApplicationInsightsName')]",
-            "location": "[resourceGroup().location]",
+            "location": "eastus",
             "tags": {
                 "[concat('hidden-link:', resourceId('Microsoft.Web/sites', parameters('ApplicationInsightsName')))]": "Resource"
             },
@@ -602,7 +602,7 @@
             "type": "Microsoft.DocumentDB/databaseAccounts",
             "apiVersion": "2023-04-15",
             "name": "[variables('cosmosdb_account_name')]",
-            "location": "[resourceGroup().location]",
+            "location": "eastus",
             "kind": "GlobalDocumentDB",
             "properties": {
                 "consistencyPolicy": {
